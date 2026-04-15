@@ -92,14 +92,18 @@ CREATE POLICY "Public read inventory" ON inventory FOR SELECT USING (true);
 INSERT INTO inventory (mango_id, in_stock) VALUES
   (1, true), (2, true), (3, true), (5, true);
 
--- Product variants — 5 kg boxes at ₹2000 (dozen discontinued)
+-- Product variants — 5 kg boxes at ₹1500 (dozen discontinued)
 INSERT INTO product_variants (mango_id, box_type, size, price, label, active) VALUES
   -- Kesar (id: 2) — medium & large
-  (2, '5kg', 'medium', 2000, '5 Kg – Medium (20-24 pcs)', true),
-  (2, '5kg', 'large',  2000, '5 Kg – Large (18-20 pcs)',  true),
+  (2, '5kg', 'medium', 1500, '5 Kg – Medium (20-24 pcs)', true),
+  (2, '5kg', 'large',  1500, '5 Kg – Large (18-20 pcs)',  true),
   -- Alphonso (id: 3) — medium & large
-  (3, '5kg', 'medium', 2000, '5 Kg – Medium (20-24 pcs)', true),
-  (3, '5kg', 'large',  2000, '5 Kg – Large (18-20 pcs)',  true);
+  (3, '5kg', 'medium', 1500, '5 Kg – Medium (20-24 pcs)', true),
+  (3, '5kg', 'large',  1500, '5 Kg – Large (18-20 pcs)',  true);
+
+-- ── 8. PRICE UPDATE (₹2000 → ₹1500) ─────────────────────────
+-- Re-runnable: updates existing rows if seed data was inserted at the old price.
+UPDATE product_variants SET price = 1500 WHERE price = 2000;
 
 -- ============================================================
 -- MANUAL STEP — Storage bucket for payment screenshots:
