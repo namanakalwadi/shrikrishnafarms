@@ -1,0 +1,46 @@
+[
+  {
+    "id": 1,
+    "name": "Khadar",
+    "description": "A large, juicy Karnataka variety with a rich golden pulp and a distinctly sweet flavour. A seasonal favourite among mango lovers.",
+    "price": 2000,
+    "priceUnit": "per 5 kg box",
+    "origin": "Dharwad, Karnataka",
+    "season": "May – July",
+    "inStock": true,
+    "hasVariants": false
+  },
+  {
+    "id": 2,
+    "name": "Kesar",
+    "description": "Known as the Queen of Mangoes, Kesar offers a distinct sweet taste with a gorgeous saffron-like colour and a heavenly aroma.",
+    "price": 2000,
+    "priceUnit": "per 5 kg box",
+    "origin": "Dharwad, Karnataka",
+    "season": "May – July",
+    "inStock": true,
+    "hasVariants": true
+  },
+  {
+    "id": 3,
+    "name": "Alphonso",
+    "description": "The King of Mangoes. Rich, creamy, saffron-hued pulp with a sweet-spicy aroma. Among the most prized varieties in India.",
+    "price": 2000,
+    "priceUnit": "per 5 kg box",
+    "origin": "Dharwad, Karnataka",
+    "season": "April – June",
+    "inStock": true,
+    "hasVariants": true
+  },
+  {
+    "id": 5,
+    "name": "Kalmi",
+    "description": "An elongated, smooth-skinned variety with a mild sweetness and firm pulp. Popular for its long shelf life and refreshing taste.",
+    "price": 2000,
+    "priceUnit": "per 5 kg box",
+    "origin": "Dharwad, Karnataka",
+    "season": "June – August",
+    "inStock": true,
+    "hasVariants": false
+  }
+]
