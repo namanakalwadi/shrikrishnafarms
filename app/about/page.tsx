@@ -44,7 +44,7 @@ export default function AboutPage() {
             </p>
           </FadeInUp>
 
-          <FadeInUp delay={0.1} className="hidden md:block">
+          <FadeInUp delay={0.1}>
             <div className="relative h-72 rounded-2xl overflow-hidden bg-amber-100">
               <video
                 src="/about-us-video.mp4"
