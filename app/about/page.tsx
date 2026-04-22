@@ -1,4 +1,3 @@
-import Image from "next/image";
 import FadeInUp from "@/components/FadeInUp";
 import { StaggerGrid, StaggerItem } from "@/components/StaggerGrid";
 import AnimatedStats from "@/components/AnimatedStats";
@@ -47,11 +46,13 @@ export default function AboutPage() {
 
           <FadeInUp delay={0.1} className="hidden md:block">
             <div className="relative h-72 rounded-2xl overflow-hidden bg-amber-100">
-              <Image
-                src="https://images.unsplash.com/photo-1553279768-865429fa0078?w=800&q=80&fit=crop"
-                alt="Shri Krishna Farm mangoes"
-                fill
-                className="object-cover"
+              <video
+                src="/about-us-video.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="absolute inset-0 w-full h-full object-cover"
               />
             </div>
           </FadeInUp>

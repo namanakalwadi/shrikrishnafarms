@@ -1,14 +1,14 @@
 [
   {
-    "id": 1,
-    "name": "Khadar",
-    "description": "A large, juicy Karnataka variety with a rich golden pulp and a distinctly sweet flavour. A seasonal favourite among mango lovers.",
+    "id": 3,
+    "name": "Alphonso (Hapus)",
+    "description": "The King of Mangoes. Rich, creamy, saffron-hued pulp with a sweet-spicy aroma. Among the most prized varieties in India.",
     "price": 1500,
     "priceUnit": "per 5 kg box",
     "origin": "Dharwad, Karnataka",
-    "season": "May – July",
+    "season": "April – June",
     "inStock": true,
-    "hasVariants": false
+    "hasVariants": true
   },
   {
     "id": 2,
@@ -22,15 +22,15 @@
     "hasVariants": true
   },
   {
-    "id": 3,
-    "name": "Alphonso",
-    "description": "The King of Mangoes. Rich, creamy, saffron-hued pulp with a sweet-spicy aroma. Among the most prized varieties in India.",
+    "id": 1,
+    "name": "Khadar",
+    "description": "A large, juicy Karnataka variety with a rich golden pulp and a distinctly sweet flavour. A seasonal favourite among mango lovers.",
     "price": 1500,
     "priceUnit": "per 5 kg box",
     "origin": "Dharwad, Karnataka",
-    "season": "April – June",
+    "season": "May – July",
     "inStock": true,
-    "hasVariants": true
+    "hasVariants": false
   },
   {
     "id": 5,

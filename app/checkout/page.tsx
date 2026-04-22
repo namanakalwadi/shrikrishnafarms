@@ -58,8 +58,12 @@ function CheckoutForm() {
 
   const [name, setName] = useState("");
   const [mobile, setMobile] = useState("");
-  const [address, setAddress] = useState("");
+  const [house, setHouse] = useState("");
+  const [road, setRoad] = useState("");
   const [pincode, setPincode] = useState("");
+  const [city, setCity] = useState("");
+  const [state, setState] = useState("Karnataka");
+  const [landmark, setLandmark] = useState("");
   const [payment, setPayment] = useState<"cod" | "online">("cod");
 
   // If district doesn't support COD, switch to online
@@ -90,6 +94,18 @@ function CheckoutForm() {
       return;
     }
 
+    if (!/^\d{6}$/.test(pincode)) {
+      setError("Please enter a valid 6-digit pincode.");
+      return;
+    }
+
+    const composedAddress = [
+      house.trim(),
+      road.trim(),
+      landmark.trim() ? `Near ${landmark.trim()}` : "",
+      `${city.trim()}, ${state} - ${pincode}`,
+    ].filter(Boolean).join(", ");
+
     // Build items array for API
     const items = isCartSource
       ? (pendingCart?.items ?? []).map((i) => ({
@@ -111,7 +127,7 @@ function CheckoutForm() {
         body: JSON.stringify({
           customer_name: name,
           mobile,
-          address: `${address}, ${pincode}`,
+          address: composedAddress,
           district: displayDistrict,
           delivery_charge: displayDelivery,
           total_amount: displayTotal,
@@ -211,18 +227,59 @@ function CheckoutForm() {
               <p className="text-stone-400 text-xs mt-1">Used to confirm and track your order</p>
             </div>
 
-            <div>
-              <label className="block text-xs font-black text-stone-500 uppercase tracking-widest mb-1.5">Delivery Address *</label>
-              <textarea required rows={3} value={address} onChange={(e) => setAddress(e.target.value)} placeholder="House no., street, locality, city"
-                className="w-full border border-stone-200 rounded-xl px-4 py-3 text-stone-900 font-semibold text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 resize-none" />
-            </div>
+            <div className="pt-2">
+              <p className="text-sm font-black text-stone-900 mb-3 flex items-center gap-2">
+                <span className="text-amber-600">📍</span> Delivery Address
+              </p>
 
-            <div>
-              <label className="block text-xs font-black text-stone-500 uppercase tracking-widest mb-1.5">Pincode *</label>
-              <input required type="text" inputMode="numeric" maxLength={6} value={pincode}
-                onChange={(e) => setPincode(e.target.value.replace(/\D/g, ""))}
-                placeholder="6-digit pincode"
-                className="w-full border border-stone-200 rounded-xl px-4 py-3 text-stone-900 font-semibold text-sm focus:outline-none focus:ring-2 focus:ring-amber-500" />
+              <div className="space-y-4">
+                <div>
+                  <label className="block text-xs font-black text-stone-500 uppercase tracking-widest mb-1.5">House no. / Building name *</label>
+                  <input type="text" required maxLength={120} value={house} onChange={(e) => setHouse(e.target.value)} placeholder="e.g. 123, Krishna Nivas"
+                    className="w-full border border-stone-200 rounded-xl px-4 py-3 text-stone-900 font-semibold text-sm focus:outline-none focus:ring-2 focus:ring-amber-500" />
+                </div>
+
+                <div>
+                  <label className="block text-xs font-black text-stone-500 uppercase tracking-widest mb-1.5">Road name / Area / Colony *</label>
+                  <input type="text" required maxLength={150} value={road} onChange={(e) => setRoad(e.target.value)} placeholder="e.g. MG Road, Saraswathpur"
+                    className="w-full border border-stone-200 rounded-xl px-4 py-3 text-stone-900 font-semibold text-sm focus:outline-none focus:ring-2 focus:ring-amber-500" />
+                </div>
+
+                <div>
+                  <label className="block text-xs font-black text-stone-500 uppercase tracking-widest mb-1.5">Pincode *</label>
+                  <input required type="text" inputMode="numeric" maxLength={6} value={pincode}
+                    onChange={(e) => setPincode(e.target.value.replace(/\D/g, ""))}
+                    placeholder="6-digit pincode"
+                    className="w-full border border-stone-200 rounded-xl px-4 py-3 text-stone-900 font-semibold text-sm focus:outline-none focus:ring-2 focus:ring-amber-500" />
+                </div>
+
+                <div className="grid grid-cols-2 gap-3">
+                  <div>
+                    <label className="block text-xs font-black text-stone-500 uppercase tracking-widest mb-1.5">City *</label>
+                    <input type="text" required maxLength={60} value={city} onChange={(e) => setCity(e.target.value)} placeholder="e.g. Dharwad"
+                      className="w-full border border-stone-200 rounded-xl px-4 py-3 text-stone-900 font-semibold text-sm focus:outline-none focus:ring-2 focus:ring-amber-500" />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-black text-stone-500 uppercase tracking-widest mb-1.5">State *</label>
+                    <select required value={state} onChange={(e) => setState(e.target.value)}
+                      className="w-full border border-stone-200 rounded-xl px-4 py-3 text-stone-900 font-semibold text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 bg-white">
+                      <option value="Karnataka">Karnataka</option>
+                      <option value="Andhra Pradesh">Andhra Pradesh</option>
+                      <option value="Goa">Goa</option>
+                      <option value="Kerala">Kerala</option>
+                      <option value="Maharashtra">Maharashtra</option>
+                      <option value="Tamil Nadu">Tamil Nadu</option>
+                      <option value="Telangana">Telangana</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div>
+                  <label className="block text-xs font-black text-stone-500 uppercase tracking-widest mb-1.5">Nearby Famous Place / Shop / School (optional)</label>
+                  <input type="text" maxLength={120} value={landmark} onChange={(e) => setLandmark(e.target.value)} placeholder="e.g. Near Vidya School"
+                    className="w-full border border-stone-200 rounded-xl px-4 py-3 text-stone-900 font-semibold text-sm focus:outline-none focus:ring-2 focus:ring-amber-500" />
+                </div>
+              </div>
             </div>
 
             <div>

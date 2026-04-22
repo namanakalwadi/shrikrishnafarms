@@ -26,67 +26,68 @@ export default function Home() {
     <main>
 
       {/* ── Hero ─────────────────────────────────────────── */}
-      <section className="grid grid-cols-1 md:grid-cols-2 min-h-[92vh]">
+      <section className="relative min-h-[92vh] flex items-center overflow-hidden">
+        {/* Background image */}
+        <Image
+          src="/hero-image.jpeg"
+          alt="Akalwadi's Shri Krishna Farms — fresh Dharwad mangoes"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+        />
 
-        {/* Left: content */}
-        <div className="bg-stone-900 flex items-center justify-center px-8 md:px-16 py-20 order-2 md:order-1">
-          <div className="max-w-lg">
-            <p className="text-amber-500 text-xs font-bold uppercase tracking-[0.25em] mb-5">
+        {/* Shade overlay — darker on left (text side), softer on right */}
+        <div className="absolute inset-0 bg-gradient-to-r from-stone-900/90 via-stone-900/70 to-stone-900/30" />
+        <div className="absolute inset-0 bg-gradient-to-b from-stone-900/40 via-transparent to-stone-900/50" />
+
+        {/* Content */}
+        <div className="relative z-10 w-full px-8 md:px-16 py-20">
+          <div className="max-w-2xl">
+            <p className="text-amber-400 text-xs font-bold uppercase tracking-[0.25em] mb-5">
               Dharwad, Karnataka • Est. 3 Generations
             </p>
 
-            <h1 className="text-white font-black italic text-4xl md:text-5xl leading-tight">
+            <h1 className="text-white font-black italic text-4xl md:text-5xl leading-tight drop-shadow-lg">
               Akalwadi's
             </h1>
-            <h2 className="text-white font-black uppercase text-4xl md:text-6xl leading-none tracking-tight mt-1">
+            <h2 className="text-white font-black uppercase text-5xl md:text-7xl leading-none tracking-tight mt-1 drop-shadow-lg">
               Shri Krishna<br />Farms
             </h2>
 
             <div className="w-14 h-0.5 bg-amber-500 my-7" />
 
-            <p className="text-stone-400 text-base md:text-lg leading-relaxed max-w-md">
-              Experience summer in every bite with our juicy and refreshing Mangoes.
+            <p className="text-stone-100 text-base md:text-lg leading-relaxed max-w-md drop-shadow-md">
+              We grow farm-fresh organic mangoes that are naturally ripened and completely chemical-free. Cultivated with care using sustainable practices, each mango is pure, juicy, and full of authentic flavor—just the way nature intended.
             </p>
 
             <div className="mt-9 flex gap-3 flex-wrap">
               <Link
                 href="/varieties"
-                className="bg-amber-600 hover:bg-amber-500 text-white font-bold px-7 py-3 rounded-lg text-sm uppercase tracking-wider transition-colors"
+                className="bg-amber-600 hover:bg-amber-500 text-white font-bold px-7 py-3 rounded-lg text-sm uppercase tracking-wider transition-colors shadow-lg"
               >
                 Browse Varieties
               </Link>
               <Link
                 href="/varieties"
-                className="border border-stone-600 hover:border-stone-400 text-stone-300 hover:text-white font-bold px-7 py-3 rounded-lg text-sm uppercase tracking-wider transition-all"
+                className="border border-white/50 hover:border-white text-white font-bold px-7 py-3 rounded-lg text-sm uppercase tracking-wider transition-all backdrop-blur-sm bg-white/10 hover:bg-white/20"
               >
                 Order Now
               </Link>
             </div>
 
-            <div className="mt-10 pt-8 border-t border-stone-800">
-              <p className="text-stone-500 text-xs mb-2 uppercase tracking-widest">Delivery Contact</p>
+            <div className="mt-10 pt-8 border-t border-white/20 max-w-md">
+              <p className="text-stone-300 text-xs mb-2 uppercase tracking-widest">Delivery Contact</p>
               <div className="flex gap-6 flex-wrap">
-                <a href="tel:9448822711" className="text-stone-300 hover:text-amber-400 text-sm font-semibold transition-colors">
+                <a href="tel:9448822711" className="text-stone-100 hover:text-amber-400 text-sm font-semibold transition-colors">
                   Subhas Akalwadi · 9448822711
                 </a>
-                <a href="tel:8431309384" className="text-stone-300 hover:text-amber-400 text-sm font-semibold transition-colors">
+                <a href="tel:8431309384" className="text-stone-100 hover:text-amber-400 text-sm font-semibold transition-colors">
                   Naman Akalwadi · 8431309384
                 </a>
               </div>
             </div>
           </div>
-        </div>
-
-        {/* Right: mango image */}
-        <div className="relative min-h-[55vw] md:min-h-0 order-1 md:order-2">
-          <Image
-            src="https://images.unsplash.com/photo-1601493700631-2b16ec4b4716?w=1200&q=85&fit=crop"
-            alt="Fresh ripe mangoes"
-            fill
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-stone-900/20" />
         </div>
       </section>
 
@@ -179,9 +180,11 @@ export default function Home() {
           <FadeInUp delay={0.1} className="hidden md:block">
             <div className="relative h-80 rounded-2xl overflow-hidden bg-amber-100">
               <Image
-                src="https://images.unsplash.com/photo-1553279768-865429fa0078?w=800&q=80&fit=crop"
-                alt="Our mango farm"
+                src="/gallery/photo6.jpeg"
+                alt="Our mango farm in Dharwad"
                 fill
+                loading="lazy"
+                sizes="(max-width: 768px) 0vw, 50vw"
                 className="object-cover"
               />
             </div>

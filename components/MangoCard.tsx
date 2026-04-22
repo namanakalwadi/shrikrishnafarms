@@ -16,11 +16,10 @@ interface MangoCardProps {
 }
 
 const mangoImages: Record<number, string> = {
-  1: "https://images.unsplash.com/photo-1601493700631-2b16ec4b4716?w=640&q=80&fit=crop",
-  2: "https://images.unsplash.com/photo-1553279768-865429fa0078?w=640&q=80&fit=crop",
-  3: "https://images.unsplash.com/photo-1605027990121-cbae9e0642df?w=640&q=80&fit=crop",
-
-  5: "https://images.unsplash.com/photo-1591073113125-e46713c829ed?w=640&q=80&fit=crop",
+  1: "/khadar.jpeg",
+  2: "/kesar.jpeg",
+  3: "/alphonso.jpeg",
+  5: "/kalmi.jpeg",
 };
 
 const fallbackGradients: Record<number, string> = {
