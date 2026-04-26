@@ -4,6 +4,9 @@ import MangoCard from "@/components/MangoCard";
 import FadeInUp from "@/components/FadeInUp";
 import { StaggerGrid, StaggerItem } from "@/components/StaggerGrid";
 import mangoes from "@/data/mangoes.json";
+import { getInventoryMap } from "@/lib/inventory";
+
+export const revalidate = 30;
 
 const stats = [
   { value: "5+", label: "Acres of Orchard" },
@@ -19,8 +22,9 @@ const whyUs = [
   { title: "Trusted Quality", desc: "Premium grade, naturally ripened — no artificial ripening agents.", icon: "✓" },
 ];
 
-export default function Home() {
-  const featured = mangoes.slice(0, 3);
+export default async function Home() {
+  const inventory = await getInventoryMap();
+  const featured = mangoes.slice(0, 3).map((m) => ({ ...m, inStock: inventory[m.id] ?? m.inStock }));
 
   return (
     <main>

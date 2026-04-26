@@ -2,7 +2,10 @@ import { notFound, redirect } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import mangoes from "@/data/mangoes.json";
+import { getInventoryMap } from "@/lib/inventory";
 import OrderForm from "./OrderForm";
+
+export const revalidate = 30;
 
 const mangoImages: Record<number, string> = {
   1: "/khadar.jpeg",
@@ -10,10 +13,6 @@ const mangoImages: Record<number, string> = {
   3: "/alphonso.jpeg",
   5: "/kalmi.jpeg",
 };
-
-export function generateStaticParams() {
-  return mangoes.map((m) => ({ id: String(m.id) }));
-}
 
 export default async function OrderPage({
   params,
@@ -24,7 +23,10 @@ export default async function OrderPage({
   const mango = mangoes.find((m) => m.id === Number(id));
 
   if (!mango) notFound();
-  if (!mango.inStock) redirect("/varieties");
+
+  const inventory = await getInventoryMap();
+  const inStock = inventory[mango.id] ?? mango.inStock;
+  if (!inStock) redirect("/varieties");
 
   const imageUrl = mangoImages[mango.id] ?? mangoImages[1];
 

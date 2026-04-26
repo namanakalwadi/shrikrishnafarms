@@ -1,8 +1,13 @@
 import MangoCard from "@/components/MangoCard";
 import { StaggerGrid, StaggerItem } from "@/components/StaggerGrid";
 import mangoes from "@/data/mangoes.json";
+import { getInventoryMap } from "@/lib/inventory";
 
-export default function VarietiesPage() {
+export const revalidate = 30;
+
+export default async function VarietiesPage() {
+  const inventory = await getInventoryMap();
+
   return (
     <main>
       {/* Header */}
@@ -21,7 +26,7 @@ export default function VarietiesPage() {
         <StaggerGrid className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {mangoes.map((mango) => (
             <StaggerItem key={mango.id}>
-              <MangoCard {...mango} />
+              <MangoCard {...mango} inStock={inventory[mango.id] ?? mango.inStock} />
             </StaggerItem>
           ))}
         </StaggerGrid>
