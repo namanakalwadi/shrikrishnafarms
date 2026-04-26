@@ -62,7 +62,7 @@ function CheckoutForm() {
   const [road, setRoad] = useState("");
   const [pincode, setPincode] = useState("");
   const [city, setCity] = useState("");
-  const [state, setState] = useState("Karnataka");
+  const state = "Karnataka";
   const [landmark, setLandmark] = useState("");
   const [payment, setPayment] = useState<"cod" | "online">("cod");
 
@@ -253,25 +253,11 @@ function CheckoutForm() {
                     className="w-full border border-stone-200 rounded-xl px-4 py-3 text-stone-900 font-semibold text-sm focus:outline-none focus:ring-2 focus:ring-amber-500" />
                 </div>
 
-                <div className="grid grid-cols-2 gap-3">
-                  <div>
-                    <label className="block text-xs font-black text-stone-500 uppercase tracking-widest mb-1.5">City *</label>
-                    <input type="text" required maxLength={60} value={city} onChange={(e) => setCity(e.target.value)} placeholder="e.g. Dharwad"
-                      className="w-full border border-stone-200 rounded-xl px-4 py-3 text-stone-900 font-semibold text-sm focus:outline-none focus:ring-2 focus:ring-amber-500" />
-                  </div>
-                  <div>
-                    <label className="block text-xs font-black text-stone-500 uppercase tracking-widest mb-1.5">State *</label>
-                    <select required value={state} onChange={(e) => setState(e.target.value)}
-                      className="w-full border border-stone-200 rounded-xl px-4 py-3 text-stone-900 font-semibold text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 bg-white">
-                      <option value="Karnataka">Karnataka</option>
-                      <option value="Andhra Pradesh">Andhra Pradesh</option>
-                      <option value="Goa">Goa</option>
-                      <option value="Kerala">Kerala</option>
-                      <option value="Maharashtra">Maharashtra</option>
-                      <option value="Tamil Nadu">Tamil Nadu</option>
-                      <option value="Telangana">Telangana</option>
-                    </select>
-                  </div>
+                <div>
+                  <label className="block text-xs font-black text-stone-500 uppercase tracking-widest mb-1.5">City *</label>
+                  <input type="text" required maxLength={60} value={city} onChange={(e) => setCity(e.target.value)} placeholder="e.g. Dharwad"
+                    className="w-full border border-stone-200 rounded-xl px-4 py-3 text-stone-900 font-semibold text-sm focus:outline-none focus:ring-2 focus:ring-amber-500" />
+                  <p className="text-stone-400 text-xs mt-1">We currently deliver only within Karnataka.</p>
                 </div>
 
                 <div>

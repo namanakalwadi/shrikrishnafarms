@@ -107,7 +107,7 @@ function SuccessContent() {
               <p className="text-xs font-black text-stone-500 uppercase tracking-widest mb-4">Scan & Pay</p>
               <div className="w-52 h-52 mx-auto bg-stone-100 rounded-xl flex items-center justify-center overflow-hidden relative">
                 <Image
-                  src="/qr-code.png"
+                  src="/QR-Code.jpeg"
                   alt="UPI QR Code"
                   width={200}
                   height={200}

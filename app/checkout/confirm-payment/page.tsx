@@ -50,6 +50,7 @@ function ConfirmPaymentForm() {
     setError("");
 
     if (!utr) { setError("Please enter your UTR number."); return; }
+    if (!/^\d{12}$/.test(utr)) { setError("UTR number must be exactly 12 digits."); return; }
     if (!file) { setError("Please upload your payment screenshot."); return; }
     if (!orderId) { setError("Order ID missing. Please go back and try again."); return; }
 
@@ -134,13 +135,15 @@ function ConfirmPaymentForm() {
             </label>
             <input
               type="text"
+              inputMode="numeric"
+              maxLength={12}
               value={utr}
-              onChange={(e) => setUtr(e.target.value.trim())}
+              onChange={(e) => setUtr(e.target.value.replace(/\D/g, "").slice(0, 12))}
               placeholder="e.g. 421234567890"
               className="w-full border border-stone-200 rounded-xl px-4 py-3 text-stone-900 font-semibold text-sm focus:outline-none focus:ring-2 focus:ring-amber-500"
             />
             <p className="text-stone-400 text-xs mt-1">
-              Find this in your UPI app under transaction history (12-digit number)
+              Find this in your UPI app under transaction history (exactly 12 digits)
             </p>
           </div>
 

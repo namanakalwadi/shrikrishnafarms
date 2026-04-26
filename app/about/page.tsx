@@ -46,13 +46,13 @@ export default function AboutPage() {
 
           <FadeInUp delay={0.1}>
             <div className="relative h-72 rounded-2xl overflow-hidden bg-amber-100">
-              <video
-                src="/about-us-video.mp4"
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="absolute inset-0 w-full h-full object-cover"
+              <iframe
+                src="https://www.google.com/maps?q=Nuggikeri+Hanuman+Temple+Kalaghatgi+Road+Dharwad&output=embed"
+                title="Akalwadi's Shri Krishna Farms — Dharwad"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
+                className="absolute inset-0 w-full h-full border-0"
               />
             </div>
           </FadeInUp>

@@ -32,8 +32,8 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Invalid mobile number." }, { status: 400 });
     }
 
-    if (!/^[A-Za-z0-9]{12,22}$/.test(utrNumber)) {
-      return NextResponse.json({ error: "Invalid UTR number. Must be 12-22 alphanumeric characters." }, { status: 400 });
+    if (!/^\d{12}$/.test(utrNumber)) {
+      return NextResponse.json({ error: "Invalid UTR number. Must be exactly 12 digits." }, { status: 400 });
     }
 
     const ALLOWED_MIME = ["image/jpeg", "image/png", "image/webp"];

@@ -54,7 +54,7 @@ export default function ContactPage() {
 
               <div>
                 <p className="text-amber-500 text-xs font-bold uppercase tracking-widest mb-2">Season</p>
-                <p className="text-stone-200 font-bold">April – August</p>
+                <p className="text-stone-200 font-bold">April – June</p>
               </div>
             </div>
           </div>

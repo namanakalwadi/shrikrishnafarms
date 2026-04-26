@@ -197,7 +197,7 @@ export default function Home() {
         <FadeInUp>
           <p className="text-amber-200 text-xs font-bold uppercase tracking-widest mb-3">Limited Season</p>
           <h2 className="text-3xl md:text-4xl font-black text-white">Order Fresh Mangoes Today</h2>
-          <p className="font-bold text-white mt-3 text-base">April – August season · Direct from Dharwad</p>
+          <p className="font-bold text-white mt-3 text-base">April – June season · Direct from Dharwad</p>
           <p className="text-amber-100 mt-2 text-sm">
             Near Nuggikeri Hanuman Temple, Kalaghatgi Road, Dharwad
           </p>
