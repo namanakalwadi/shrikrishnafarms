@@ -10,7 +10,7 @@ export const revalidate = 30;
 
 const stats = [
   { value: "5+", label: "Acres of Orchard" },
-  { value: "4+", label: "Mango Varieties" },
+  { value: "2", label: "Mango Varieties" },
   { value: "3rd", label: "Generation Farm" },
   { value: "1000+", label: "Happy Customers" },
 ];
@@ -89,6 +89,9 @@ export default async function Home() {
                 <a href="tel:8431309384" className="text-stone-100 hover:text-amber-400 text-sm font-semibold transition-colors">
                   Naman Akalwadi · 8431309384
                 </a>
+                <a href="tel:9448133699" className="text-stone-100 hover:text-amber-400 text-sm font-semibold transition-colors">
+                  Deepak Akalwadi · 9448133699
+                </a>
               </div>
             </div>
           </div>
@@ -128,7 +131,7 @@ export default async function Home() {
             href="/varieties"
             className="inline-block border-2 border-amber-600 text-amber-700 font-bold px-8 py-3 rounded-lg hover:bg-amber-600 hover:text-white transition-all text-sm uppercase tracking-wider"
           >
-            View All 4 Varieties →
+            View All Varieties →
           </Link>
         </FadeInUp>
       </section>
@@ -171,7 +174,7 @@ export default async function Home() {
             </p>
             <p className="text-stone-500 mt-3 text-sm leading-relaxed">
               Located near Nuggikeri Hanuman Temple, Dharwad, we are proud to bring
-              the taste of Karnataka to homes across India.
+              the taste of Dharwad to homes across India.
             </p>
             <Link
               href="/about"
@@ -214,7 +217,7 @@ export default async function Home() {
             </Link>
           </div>
           <p className="text-amber-100 mt-4 text-sm font-semibold">
-            Subhas Akalwadi 9448822711 &nbsp;|&nbsp; Naman Akalwadi 8431309384
+            Subhas Akalwadi 9448822711 &nbsp;|&nbsp; Naman Akalwadi 8431309384 &nbsp;|&nbsp; Deepak Akalwadi 9448133699
           </p>
         </FadeInUp>
       </section>

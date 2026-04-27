@@ -101,6 +101,9 @@ export default function AboutPage() {
             <a href="tel:8431309384" className="text-amber-100 hover:text-white transition-colors font-semibold">
               Naman Akalwadi · 8431309384
             </a>
+            <a href="tel:9448133699" className="text-amber-100 hover:text-white transition-colors font-semibold">
+              Deepak Akalwadi · 9448133699
+            </a>
           </div>
         </FadeInUp>
       </section>

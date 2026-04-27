@@ -20,27 +20,5 @@
     "season": "May – July",
     "inStock": true,
     "hasVariants": true
-  },
-  {
-    "id": 1,
-    "name": "Khadar",
-    "description": "A large, juicy Karnataka variety with a rich golden pulp and a distinctly sweet flavour. A seasonal favourite among mango lovers.",
-    "price": 1500,
-    "priceUnit": "per 5 kg box",
-    "origin": "Dharwad, Karnataka",
-    "season": "May – July",
-    "inStock": true,
-    "hasVariants": false
-  },
-  {
-    "id": 5,
-    "name": "Kalmi",
-    "description": "An elongated, smooth-skinned variety with a mild sweetness and firm pulp. Popular for its long shelf life and refreshing taste.",
-    "price": 1500,
-    "priceUnit": "per 5 kg box",
-    "origin": "Dharwad, Karnataka",
-    "season": "June – August",
-    "inStock": true,
-    "hasVariants": false
   }
 ]

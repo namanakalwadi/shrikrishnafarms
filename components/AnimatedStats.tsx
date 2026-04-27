@@ -5,7 +5,7 @@ import { motion, useInView } from "framer-motion";
 
 const stats = [
   { value: 5, suffix: "+", label: "Acres of Orchard" },
-  { value: 4, suffix: "+", label: "Mango Varieties" },
+  { value: 2, suffix: "", label: "Mango Varieties" },
   { value: 3, suffix: "rd", label: "Generation Farm" },
   { value: 1000, suffix: "+", label: "Happy Customers" },
 ];

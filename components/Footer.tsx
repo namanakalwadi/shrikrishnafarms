@@ -32,6 +32,9 @@ export default function Footer() {
             <a href="tel:8431309384" className="flex items-center gap-1.5 text-stone-300 hover:text-amber-400 transition-colors mt-0.5">
               <span className="text-amber-500">—</span> Naman Akalwadi · 8431309384
             </a>
+            <a href="tel:9448133699" className="flex items-center gap-1.5 text-stone-300 hover:text-amber-400 transition-colors mt-0.5">
+              <span className="text-amber-500">—</span> Deepak Akalwadi · 9448133699
+            </a>
           </div>
 
         </div>

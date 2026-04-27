@@ -16,23 +16,18 @@ interface MangoCardProps {
 }
 
 const mangoImages: Record<number, string> = {
-  1: "/khadar.jpeg",
   2: "/kesar.jpeg",
   3: "/alphonso.jpeg",
-  5: "/kalmi.jpeg",
 };
 
 const fallbackGradients: Record<number, string> = {
-  1: "from-amber-200 to-yellow-200",
   2: "from-orange-200 to-amber-200",
   3: "from-yellow-200 to-orange-200",
-
-  5: "from-amber-300 to-orange-200",
 };
 
 export default function MangoCard({ id, name, description, price, priceUnit, origin, inStock }: MangoCardProps) {
-  const imageUrl = mangoImages[id] ?? mangoImages[1];
-  const fallback = fallbackGradients[id] ?? fallbackGradients[1];
+  const imageUrl = mangoImages[id] ?? mangoImages[3];
+  const fallback = fallbackGradients[id] ?? fallbackGradients[3];
 
   const card = (
     <motion.div

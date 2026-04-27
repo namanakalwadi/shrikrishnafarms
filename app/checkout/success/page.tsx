@@ -133,6 +133,11 @@ function SuccessContent() {
                   <p className="font-black text-stone-900 text-base">8431309384</p>
                   <p className="text-stone-500 text-xs mt-0.5">Naman Akalwadi</p>
                 </div>
+                <div className="w-px bg-stone-100" />
+                <div>
+                  <p className="font-black text-stone-900 text-base">9448133699</p>
+                  <p className="text-stone-500 text-xs mt-0.5">Deepak Akalwadi</p>
+                </div>
               </div>
             </div>
 
@@ -174,6 +179,11 @@ function SuccessContent() {
                 <div>
                   <p className="font-black text-stone-900 text-base">8431309384</p>
                   <p className="text-stone-500 text-xs mt-0.5">Naman Akalwadi</p>
+                </div>
+                <div className="w-px bg-stone-100" />
+                <div>
+                  <p className="font-black text-stone-900 text-base">9448133699</p>
+                  <p className="text-stone-500 text-xs mt-0.5">Deepak Akalwadi</p>
                 </div>
               </div>
             </div>

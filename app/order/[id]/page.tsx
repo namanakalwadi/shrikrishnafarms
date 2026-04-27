@@ -8,10 +8,8 @@ import OrderForm from "./OrderForm";
 export const revalidate = 30;
 
 const mangoImages: Record<number, string> = {
-  1: "/khadar.jpeg",
   2: "/kesar.jpeg",
   3: "/alphonso.jpeg",
-  5: "/kalmi.jpeg",
 };
 
 export default async function OrderPage({
@@ -28,7 +26,7 @@ export default async function OrderPage({
   const inStock = inventory[mango.id] ?? mango.inStock;
   if (!inStock) redirect("/varieties");
 
-  const imageUrl = mangoImages[mango.id] ?? mangoImages[1];
+  const imageUrl = mangoImages[mango.id] ?? mangoImages[3];
 
   return (
     <main>

@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://shrikrishnafarms.in"),
   title: "Akalwadi's Shri Krishna Farms — Premium Farm Fresh Mangoes",
   description:
-    "Farm-fresh mangoes from Dharwad, Karnataka. Khadar, Kesar, Alphonso, Kalmi and more. Delivered across Karnataka. Call: Subhas Akalwadi 9448822711 / Naman Akalwadi 8431309384.",
+    "Farm-fresh mangoes from Dharwad, Karnataka. Alphonso (Hapus) and Kesar varieties. Delivered across Karnataka. Call: Subhas Akalwadi 9448822711 / Naman Akalwadi 8431309384.",
   openGraph: {
     title: "Akalwadi's Shri Krishna Farms",
     description: "Experience summer in every bite. Farm-fresh mangoes from Dharwad, Karnataka.",

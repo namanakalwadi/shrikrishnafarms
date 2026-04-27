@@ -1,7 +1,7 @@
 "use client";
 
 export default function WhatsAppButton() {
-  const phone = "918431309384";
+  const phone = "919448133699";
   const message = encodeURIComponent("Hello! I'd like to place an order for mangoes from Shri Krishna Farms.");
   const href = `https://wa.me/${phone}?text=${message}`;
 

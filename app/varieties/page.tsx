@@ -16,7 +16,7 @@ export default async function VarietiesPage() {
           <p className="text-amber-500 text-xs font-bold uppercase tracking-widest mb-2">What We Grow</p>
           <h1 className="text-4xl md:text-5xl font-black text-white">Our Mango Varieties</h1>
           <p className="font-bold text-stone-300 mt-3 text-lg max-w-xl">
-            Four premium varieties, each with a distinct character and flavour
+            Two premium varieties, each with a distinct character and flavour
           </p>
         </div>
       </section>
